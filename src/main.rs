@@ -1,12 +1,12 @@
-use std::io;
-
-const M_PI: f32 = 3.1516;
-
 fn main() {
-    let mut x = 5;
-    println!("the value of x is {x}");
-    x =10;
-    println!("the value of x is {x}");
+    let x = 5;
 
-    println!("The value of constant PI is {M_PI}");
+    let x = x + 1;
+
+    {
+        let x = x * 2;
+        println!("The value of x in the inner scope is: {x}");
+    }
+
+    println!("The value of x is: {x}");
 }
