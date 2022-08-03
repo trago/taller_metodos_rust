@@ -1,22 +1,8 @@
-use std::io;
 
 fn main() {
-    let a = [1, 2, 3, 4, 5];
+    let mut s = String::from("hello");
 
-    println!("Please enter an array index.");
+    s.push_str(", world!"); // push_str() appends a literal to a String
 
-    let mut index = String::new();
-
-    io::stdin()
-        .read_line(&mut index)
-        .expect("Failed to read line");
-
-    let index: usize = index
-        .trim()
-        .parse()
-        .expect("Index entered was not a number");
-
-    let element = a[index];
-
-    println!("The value of the element at index {index} is: {element}");
+    println!("{}", s); // This will print `hello, world!`
 }
