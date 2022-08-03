@@ -1,19 +1,12 @@
 use std::io;
-use rand::Rng;
+
+const M_PI: f32 = 3.1516;
 
 fn main() {
-    let number: u8 = rand::thread_rng().gen::<u8>() % 10 + 1;
+    let mut x = 5;
+    println!("the value of x is {x}");
+    x =10;
+    println!("the value of x is {x}");
 
-    println!("Adivina en que numero pienso del 1 al 10)");
-
-    let mut input = String::new();
-    io::stdin().read_line(&mut input).expect("No pude leer la linea de entrada");
-
-    let my_guess = input.trim().parse::<u8>().unwrap();
-
-    if my_guess == number{
-        println!("Adivinaste!!")
-    }else {
-        println!("No le atinaste, mi numero es {number}")
-    }
+    println!("The value of constant PI is {M_PI}");
 }
