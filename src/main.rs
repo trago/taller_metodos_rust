@@ -2,7 +2,9 @@
 fn main() {
     let mut s = String::from("hello");
 
-    s.push_str(", world!"); // push_str() appends a literal to a String
+    let r1 = &s; // no problem
+    let r2 = &s; // no problem
+    let r3 = &mut s; // BIG PROBLEM
 
-    println!("{}", s); // This will print `hello, world!`
+    println!("{}, {}, and {}", r1, r2, r3);
 }
