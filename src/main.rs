@@ -1,15 +1,12 @@
-struct User {
-    active: bool,
-    username: String,
-    email: String,
-    sign_in_count: u64,
+fn calc_area(width: i32, height: i32) -> i32 {
+    width * height
 }
 
 fn main() {
-    let user1 = User {
-        email: String::from("someone@example.com"),
-        username: String::from("someusername123"),
-        active: true,
-        sign_in_count: 1,
-    };
+    let width = 30;
+    let height = 40;
+
+    let area = calc_area(width, height);
+
+    println!("the area of rectagle is {area}");
 }
