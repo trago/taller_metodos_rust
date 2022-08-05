@@ -8,4 +8,5 @@ edition = "2021"
 [dependencies]
 rand = "0.8.5"
 approx = "0.4.0"
+nalgebra = "0.31.1"
 ndarray = { version = "0.15.6", features = ["approx"] }
