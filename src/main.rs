@@ -1,12 +1,17 @@
-fn calc_area(width: i32, height: i32) -> i32 {
-    width * height
-}
+use ndarray::arr2;
 
 fn main() {
-    let width = 30;
-    let height = 40;
+    let a = arr2(&[[1, 2, 3],
+        [4, 5, 6]]);
 
-    let area = calc_area(width, height);
+    let b = arr2(&[[6, 5, 4],
+        [3, 2, 1]]);
 
-    println!("the area of rectagle is {area}");
+    let sum = &a + &b;
+
+    println!("{}", a);
+    println!("+");
+    println!("{}", b);
+    println!("=");
+    println!("{}", sum);
 }
