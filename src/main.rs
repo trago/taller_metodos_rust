@@ -1,16 +1,21 @@
-use ndarray::{arr1, arr2, Array1};
+use approx::assert_abs_diff_eq;
+use ndarray::Array;
 
 fn main() {
-    let scalar = 4;
+    let a = Array::from(vec![1., 2., 3., 4., 5.]);
+    let b = Array::from(vec![5., 4., 3., 2., 1.]);
+    let mut c = Array::from(vec![1., 2., 3., 4., 5.]);
+    let mut d = Array::from(vec![5., 4., 3., 2., 1.]);
 
-    let vector = arr1(&[1, 2, 3]);
+    let z = a + b;
+    let w =  &c + &d;
 
-    let matrix = arr2(&[[4, 5, 6],
-        [7, 8, 9]]);
+    assert_abs_diff_eq!(z, Array::from(vec![6., 6., 6., 6., 6.]));
 
-    let new_vector: Array1<_> = scalar * vector;
-    println!("{}", new_vector);
+    println!("c = {}", c);
+    c[0] = 10.;
+    d[1] = 10.;
 
-    let new_matrix = matrix.dot(&new_vector);
-    println!("{}", new_matrix);
+    assert_abs_diff_eq!(w, Array::from(vec![6., 6., 6., 6., 6.]));
+
 }
